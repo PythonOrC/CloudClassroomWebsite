@@ -2,13 +2,14 @@ import os
 
 
 def modify(f):
+    f = "{% load static %}\n" + f
     for resource in resources:
         if resource in f:
-            # print(resource)
-            f = f.replace(
-                resource, r"{% static '" + resource + "' %}"
-            )
-    f = "{% load static %}\n" + f.replace(".html", "")
+            f = f.replace(resource, r"{% static '" + resource + "' %}")
+    for file in files:
+        rel_f = file.split("\\")[-1]
+        f = f.replace(rel_f, "../" + rel_f.split(".")[0])
+        # f = f.replace(rel_f.split(".")[0], "../" + rel_f.split(".")[0])
     return f
 
 

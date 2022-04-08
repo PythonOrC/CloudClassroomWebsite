@@ -133,3 +133,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, "assets")
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # CRISPY_TEMPLATE_PACK = "uni_form"
+LOGIN_REDIRECT_URL = "index"
+LOGOUT_REDIRECT_URL = "index"

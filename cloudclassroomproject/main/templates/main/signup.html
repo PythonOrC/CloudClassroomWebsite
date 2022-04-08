@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8" />
     <title>signup</title>
-    <meta content="signup" property="og:title" />
-    <meta content="signup" property="twitter:title" />
+    <meta content="../signup" property="og:title" />
+    <meta content="../signup" property="twitter:title" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Webflow" name="generator" />
     <link
@@ -63,14 +63,14 @@
             data-w-id="483cd0ea-0ffd-1df5-02c0-5a28799302cf"
             class="split-content header-left"
           >
-            <a href="index" class="brand w-nav-brand"
+            <a href="../index" class="brand w-nav-brand"
               ><img
                 src="{% static 'images/logo.png' %}"
                 alt=""
                 class="header-logo"
             /></a>
             <nav role="navigation" class="nav-menu w-nav-menu">
-              <a href="index" class="nav-link">Home</a>
+              <a href="../index" class="nav-link">Home</a>
               <div
                 data-hover=""
                 data-delay="0"
@@ -85,28 +85,28 @@
                         <h4 class="mega-menu-title hidden-mobile">Pages</h4>
                         <div class="menu-2-columns">
                           <div class="mega-menu-column-1">
-                            <a href="index" class="mega-menu-link">Home</a>
-                            <a href="about-us" class="mega-menu-link">About</a>
-                            <a href="courses" class="mega-menu-link">Courses</a>
+                            <a href="../index" class="mega-menu-link">Home</a>
+                            <a href="../about-us" class="mega-menu-link">About</a>
+                            <a href="../courses" class="mega-menu-link">Courses</a>
                             <a
                               href="https://academytemplate.webflow.io/product/brand-identity-design-for-marketers"
                               class="mega-menu-link"
                               >Individual Course</a
                             >
                             <a
-                              href="course/brand-identity-design-for-marketers"
+                              href="../course/brand-identity-design-for-marketers"
                               class="mega-menu-link"
                               >Purchased Course</a
                             >
                           </div>
                           <div class="mega-menu-column-3">
-                            <a href="blog" class="mega-menu-link">Blog</a>
+                            <a href="../blog" class="mega-menu-link">Blog</a>
                             <a
                               href="https://academytemplate.webflow.io/post/8-great-design-trends-that-are-coming-back"
                               class="mega-menu-link"
                               >Blog Post</a
                             >
-                            <a href="community" class="mega-menu-link"
+                            <a href="../community" class="mega-menu-link"
                               >Events</a
                             >
                             <a
@@ -114,7 +114,7 @@
                               class="mega-menu-link"
                               >Individual Event</a
                             >
-                            <a href="instructors" class="mega-menu-link"
+                            <a href="../instructors" class="mega-menu-link"
                               >Teachers</a
                             >
                           </div>
@@ -124,7 +124,7 @@
                               class="mega-menu-link"
                               >Individual Teacher</a
                             >
-                            <a href="contact-us" class="mega-menu-link"
+                            <a href="../contact-us" class="mega-menu-link"
                               >Contact</a
                             >
                           </div>
@@ -143,18 +143,18 @@
                           class="mega-menu-link"
                           >Password</a
                         >
-                        <a href="licenses" class="mega-menu-link">Licenses</a>
-                        <a href="start-here" class="mega-menu-link"
+                        <a href="../licenses" class="mega-menu-link">Licenses</a>
+                        <a href="../start-here" class="mega-menu-link"
                           >Start Here</a
                         >
-                        <a href="changelog" class="mega-menu-link">Changelog</a>
+                        <a href="../changelog" class="mega-menu-link">Changelog</a>
                       </div>
                     </div>
                   </div>
                 </nav>
               </div>
-              <a href="about-us" class="nav-link">About</a>
-              <a href="community" class="nav-link">Community</a>
+              <a href="../about-us" class="nav-link">About</a>
+              <a href="../community" class="nav-link">Community</a>
             </nav>
           </div>
           <div
@@ -170,7 +170,7 @@
             >
             <a
               id="signInButton"
-              href="signin"
+              href="../signin"
               class="button-primary header-button w-button"
               >Log In</a
             >
@@ -206,7 +206,7 @@
           <div class="container" style="margin-top: 30px">
             <form action="/signup/" method="POST">
               {% csrf_token %}
-              <!-- <fieldset class="form-group">
+              <fieldset class="form-group">
                 <legend class="border-bottom mb-4" style="color: black">
                   Join Now
                 </legend>
@@ -217,13 +217,10 @@
               </div>
               <div class="form-group">
                 <small class="text-muted ml-3"
-                  >Already have an account? <a href="signin">Sign In</a></small
+                  >Already have an account?
+                  <a href="../signin">Sign In</a></small
                 >
-              </div> -->
-              {{ form|crispy }}
-              <!-- <button type="submit">Submit</button> -->
-              <input type="submit" value="OK" />
-              Already Have An Account? <a href="#">Login</a>
+              </div>
             </form>
           </div>
         </div>
