@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import sys
+from tkinter import PROJECTING
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -42,6 +44,9 @@ INSTALLED_APPS = [
 # Add in own apps here
 INSTALLED_APPS += [
     "main.apps.MainConfig",
+    "course.apps.CourseConfig",
+    "account.apps.AccountConfig",
+    "cart.apps.CartConfig",
     "crispy_forms",
 ]
 
@@ -60,7 +65,7 @@ ROOT_URLCONF = "cloudclassroomproject.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR, "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -72,6 +77,14 @@ TEMPLATES = [
         },
     },
 ]
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.core.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.request",
+)
 
 WSGI_APPLICATION = "cloudclassroomproject.wsgi.application"
 
@@ -133,5 +146,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, "assets")
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # CRISPY_TEMPLATE_PACK = "uni_form"
-LOGIN_REDIRECT_URL = "index"
-LOGOUT_REDIRECT_URL = "index"
+LOGIN_REDIRECT_URL = "main:index"
+LOGOUT_REDIRECT_URL = "main:index"
