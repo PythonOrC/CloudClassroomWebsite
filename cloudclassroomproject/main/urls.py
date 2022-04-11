@@ -17,6 +17,5 @@ urlpatterns = [
         auth_views.LogoutView.as_view(template_name="signout.html"),
         name="signout",
     ),
-    path("cart/", views.cart, name="cart"),
     path("<str:place>/", views.general, name="general"),
 ]

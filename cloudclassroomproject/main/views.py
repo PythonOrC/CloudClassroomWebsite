@@ -17,7 +17,7 @@ def signup(request):
             username = form.cleaned_data.get("username")
 
             messages.success(request, f"New account created: {username}")
-            return redirect("signin")
+            return redirect("main:signin")
         else:
             messages.error(request, "Invalid form")
     else:
@@ -25,9 +25,6 @@ def signup(request):
     return render(request, "signup.html", {"form": form})
 
 
-def cart(request):
-    order = get_user_pending_order(request)
-    return render(request, "cart.html", {"order": order})
 
 
 def general(request, place):
