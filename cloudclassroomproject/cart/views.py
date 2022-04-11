@@ -33,7 +33,7 @@ def add_to_cart(request, course_id):
     course = Course.objects.get(id=course_id)
     if Order.objects.filter(user_profile=request.user.userprofile, course=course).exists():
         messages.info(request, "You already signed up for this course.")
-        return redirect("course:view_course", course.name)
+        return redirect("course:view_course", course.id)
 
     order = get_user_pending_order(request)
     if order:
@@ -42,7 +42,7 @@ def add_to_cart(request, course_id):
         order_id = generate_order_id()
     order= Order.objects.create(user_profile=request.user.userprofile, course=course, ref_code = order_id)
     messages.info(request, "Item added to cart.")
-    return redirect("course:view_course", course.name)
+    return redirect("course:view_course", course.id)
 
 @login_required(login_url=LOGIN_URL)
 def delete_from_cart(request, course_id):
@@ -89,6 +89,6 @@ def update_transaction_records(request, ref_code):
     messages.info(request, "Thank you! Your items have been ordered.")
     return redirect("account:account_overview")
 
-@login_required(login_url=LOGIN_URL)
-def order_history(request):
-    pass
+
+
+

@@ -13,5 +13,8 @@ def all_courses(request):
     return render(request, "courses-all.html", {"courses": courses})
 
 
-def view_course(request, url):
-    return render(request, f"course/{url}.html")
+def view_course(request, id):
+    course = Course.objects.get(id=id)
+    name = course.name
+    context = {"course": course}
+    return render(request, f"course-detail.html", context)

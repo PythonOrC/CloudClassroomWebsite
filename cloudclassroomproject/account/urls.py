@@ -6,4 +6,5 @@ app_name = "account"
 
 urlpatterns = [
     path("", views.account_overview, name="account_overview"),
+    path("order-history/", views.order_history, name="order-history"),
 ]

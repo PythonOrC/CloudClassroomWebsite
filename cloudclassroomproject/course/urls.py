@@ -7,5 +7,5 @@ app_name = "course"
 urlpatterns = [
     path("", views.course, name="course"),
     path("all/", views.all_courses, name="all"),
-    path("<str:url>/", views.view_course, name="view_course"),
+    path("<int:id>/", views.view_course, name="view_course"),
 ]
