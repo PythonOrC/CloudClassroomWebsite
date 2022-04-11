@@ -11,4 +11,3 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return f"{self.user.username} Profile"
-    # cart = models.ManyToManyField("course.Course", blank=True, related_name="cart")
